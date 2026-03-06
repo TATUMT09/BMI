@@ -3,9 +3,9 @@ spring:
     name: BMI
 
   datasource:
-    url: jdbc:postgresql://localhost:5432/BMI
-    username: postgres
-    password: 1223
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
     driver-class-name: org.postgresql.Driver
 
   jpa:
@@ -17,5 +17,5 @@ spring:
         format_sql: true
 
 openai:
-  api-key: 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
+  api-key: ${OPENAI_API_KEY}
   base-url: https://openrouter.ai/api/v1
