@@ -17,20 +17,20 @@ class OpenAiConfig {
             .baseUrl("https://api.openai.com/v1")
             .build()
     }
-}
 
-@Bean
-fun corsConfigurationSource(): CorsConfigurationSource {
+    @Bean
+    fun corsConfigurationSource(): CorsConfigurationSource {
 
-    val configuration = CorsConfiguration()
+        val configuration = CorsConfiguration()
 
-    configuration.allowedOriginPatterns = listOf("*")
-    configuration.allowedMethods = listOf("GET","POST","PUT","DELETE","OPTIONS")
-    configuration.allowedHeaders = listOf("*")
-    configuration.allowCredentials = true
+        configuration.allowedOriginPatterns = listOf("*")
+        configuration.allowedMethods = listOf("GET","POST","PUT","DELETE","OPTIONS")
+        configuration.allowedHeaders = listOf("*")
+        configuration.allowCredentials = true
 
-    val source = UrlBasedCorsConfigurationSource()
-    source.registerCorsConfiguration("/**", configuration)
+        val source = UrlBasedCorsConfigurationSource()
+        source.registerCorsConfiguration("/**", configuration)
 
-    return source
+        return source
+    }
 }
